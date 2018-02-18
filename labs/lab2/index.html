@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
+    <body>
+        <div class="container" id="home"></div>
+        <div class="container" id="search"></div>
+        <input type="text" id="query">
+        <input type="button" id="btnSearch">
+        <div class="container" id="query"> </div>
+        <script>
+        function doSearch() {
+            // Built by LucyBot. www.lucybot.com
+            var url = "https://api.nytimes.com/svc/movies/v2/reviews/search.json";
+            url += '?' + $.param({
+                'api-key': "26b5758e2b6a41f590482d330fa13036",
+                'query': "star wars"
+            });
+            $.ajax({
+                url: url,
+                method: 'GET',
+            }).done(function(result) {
+                console.log(result);
+            }).fail(function(err) {
+                throw err;
+            });}
+        </script>
+    </body>
+
+</html>
