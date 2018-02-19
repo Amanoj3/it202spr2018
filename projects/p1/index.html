@@ -325,12 +325,11 @@
         </div>
       </div>
     </section>
-
     <!-- Testimonials -->
     <section class="testimonials text-center bg-light">
       <div class="container">
         <h2 class="mb-5">What people are saying...</h2>
-        <div class="row">
+        <div class="card">
           <div class="col-lg-4">
             <div class="testimonial-item mx-auto mb-5 mb-lg-0">
               <img class="img-fluid rounded-circle mb-3" src="img/testimonials-1.jpg" alt="">
@@ -384,6 +383,19 @@
   </div>
 </div>
 
+<!-- Add Google Maps -->
+<div id="googleMap"></div>
+<script>
+function myMap() {
+var myCenter = new google.maps.LatLng(41.878114, -87.629798);
+var mapProp = {center:myCenter, zoom:12, scrollwheel:false, draggable:false, mapTypeId:google.maps.MapTypeId.ROADMAP};
+var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+var marker = new google.maps.Marker({position:myCenter});
+marker.setMap(map);
+}
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDthsMTAmvE1pViQ5opyPOtPrs1vNZu4ic&callback=myMap"></script>
+
 
     <!-- Footer -->
     <footer class="footer bg-light">
@@ -436,6 +448,6 @@
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-  </body>
+  </body>  
 
 </html>
